@@ -886,6 +886,7 @@ class taskCog(commands.Cog):
 		await self.bot.wait_until_ready()
 
 	################ 명존쎄 ################ 
+	@commands.has_permissions(manage_messages=True)	
 	@commands.command(name=command[8][0], aliases=command[8][1:])
 	async def command_task_list(self, ctx : commands.Context):
 		if ctx.message.channel.id != basicSetting[7]:
@@ -1007,6 +1008,7 @@ class taskCog(commands.Cog):
 
 			if channel != '':			
 				################ 보탐봇 재시작 ################ 
+				@commands.has_permissions(manage_messages=True)	
 				if endTime.strftime('%Y-%m-%d ') + endTime.strftime('%H:%M:%S') == now.strftime('%Y-%m-%d ') + now.strftime('%H:%M:%S'):
 					await dbSave()
 					await FixedBossDateSave()
