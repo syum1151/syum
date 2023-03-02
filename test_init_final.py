@@ -1007,8 +1007,7 @@ class taskCog(commands.Cog):
 			tmp_aftr2 = now+datetime.timedelta(minutes=int(0-int(basicSetting[22])))
 
 			if channel != '':			
-				################ 보탐봇 재시작 ################ 
-				@commands.has_permissions(manage_messages=True)	
+				################ 보탐봇 재시작 ################ 	
 				if endTime.strftime('%Y-%m-%d ') + endTime.strftime('%H:%M:%S') == now.strftime('%Y-%m-%d ') + now.strftime('%H:%M:%S'):
 					await dbSave()
 					await FixedBossDateSave()
